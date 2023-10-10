@@ -99,7 +99,7 @@ fun MovieSearchBar(modifier: Modifier, hint: String = "", onSearch: (String) -> 
     Box(modifier = Modifier) {
         TextField(value = text,
             onValueChange = {
-                text = it
+               text=it
             },
             keyboardActions = KeyboardActions(onDone = {
                 onSearch(text)
@@ -110,13 +110,12 @@ fun MovieSearchBar(modifier: Modifier, hint: String = "", onSearch: (String) -> 
             shape = RoundedCornerShape(12.dp),
             modifier = Modifier
                 .fillMaxWidth()
-                .shadow(5.dp, CircleShape)
-                .padding(20.dp)
+                .shadow(5.dp, CircleShape).padding(20.dp)
                 .onFocusChanged {
                     isHintDisplayed = it.isFocused != true && text.isEmpty()
                 })
         if (isHintDisplayed){
-            Text(text = hint, color = Color.Black, modifier = Modifier.padding(20.dp))
+            Text(text = hint, color = Color.Black, modifier = Modifier.padding(30.dp))
         }
     }
 }
